@@ -1,3 +1,5 @@
+import { Button, ToolkitProvider } from "@jpmorganchase/uitk-core";
+import { FlexLayout, Input, FormField } from "@jpmorganchase/uitk-lab";
 import React, { useEffect, useRef, useState } from "react";
 import { PostToFigmaMessage, PostToUIMessage } from "../shared-src";
 import "./App.css";
@@ -52,26 +54,37 @@ function App() {
     success !== undefined ? (success ? " ✅" : " ❌") : null;
 
   return (
-    <main>
-      <header>
-        <img src={logoPng} />
-        &nbsp;
-        <img src={`data:image/svg+xml;utf8,${logoSvg}`} />
-        &nbsp;
-        <Logo />
-        <h2>Rectangle Creator</h2>
-      </header>
-      <section>
-        <input id="input" type="number" min="0" ref={inputRef} />
-        <label htmlFor="input">Rectangle Count</label>
-      </section>
-      <footer>
-        <button className="brand" onClick={onCreate}>
-          Create{buttonCreateResultSuffix}
-        </button>
-        <button onClick={onCancel}>Cancel</button>
-      </footer>
-    </main>
+    <ToolkitProvider>
+      <FlexLayout
+        className="appRoot"
+        align="center"
+        direction="column"
+        justify="center"
+      >
+        <header>
+          <img src={logoPng} />
+          &nbsp;
+          <img src={`data:image/svg+xml;utf8,${logoSvg}`} />
+          &nbsp;
+          <Logo />
+          <h2>Rectangle Creator</h2>
+        </header>
+        <FormField label="Rectangle Count" fullWidth={false}>
+          <Input
+            id="input"
+            type="number"
+            inputProps={{ min: 0 }}
+            ref={inputRef}
+          />
+        </FormField>
+        <FlexLayout align="center">
+          <Button className="brand" onClick={onCreate}>
+            Create{buttonCreateResultSuffix}
+          </Button>
+          <Button onClick={onCancel}>Cancel</Button>
+        </FlexLayout>
+      </FlexLayout>
+    </ToolkitProvider>
   );
 }
 
