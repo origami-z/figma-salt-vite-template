@@ -1,5 +1,10 @@
-import { Button, ToolkitProvider } from "@jpmorganchase/uitk-core";
-import { FlexLayout, Input, FormField } from "@jpmorganchase/uitk-lab";
+import {
+  Button,
+  FlexLayout,
+  FormField,
+  Input,
+  ToolkitProvider,
+} from "@jpmorganchase/uitk-core";
 import React, { useEffect, useRef, useState } from "react";
 import { PostToFigmaMessage, PostToUIMessage } from "../shared-src";
 import "./App.css";
