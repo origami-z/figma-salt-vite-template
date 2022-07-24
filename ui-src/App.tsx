@@ -13,8 +13,16 @@ import logoPng from "./logo.png";
 import logoSvg from "./logo.svg?raw";
 
 function App() {
+  const [theme, setTheme] = useState<"light" | "dark">("light");
   const inputRef = useRef<HTMLInputElement>(null);
   const [success, setSuccess] = useState<boolean | undefined>(undefined);
+
+  useEffect(() => {
+    // Support Figma dark theme - https://www.figma.com/plugin-docs/css-variables/
+    if (document.querySelector("html")?.classList.contains("figma-dark")) {
+      setTheme("dark");
+    }
+  }, []);
 
   useEffect(() => {
     window.onmessage = async (event: {
@@ -59,7 +67,7 @@ function App() {
     success !== undefined ? (success ? " ✅" : " ❌") : null;
 
   return (
-    <ToolkitProvider>
+    <ToolkitProvider theme={theme}>
       <FlexLayout
         className="appRoot"
         align="center"

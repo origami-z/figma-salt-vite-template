@@ -3,6 +3,10 @@
   height: 100%;
 }
 
+.uitk-dark .appRoot {
+  color: var(--uitk-text-primary-foreground);
+}
+
 header {
   text-align: center;
 }
