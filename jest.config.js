@@ -7,4 +7,5 @@ module.exports = {
       tsconfig: "plugin-src/__tests__/tsconfig.json",
     },
   },
+  setupFiles: ["<rootDir>/jest/globals.js"],
 };
