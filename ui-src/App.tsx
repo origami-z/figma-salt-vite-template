@@ -3,26 +3,22 @@ import {
   FlexLayout,
   FormField,
   Input,
+  StackLayout,
   ToolkitProvider,
 } from "@jpmorganchase/uitk-core";
 import React, { useEffect, useRef, useState } from "react";
 import { PostToFigmaMessage, PostToUIMessage } from "../shared-src";
-import "./App.css";
+import { useFigmaPluginTheme } from "./components/useFigmaPluginTheme";
 import Logo from "./Logo";
 import logoPng from "./logo.png";
 import logoSvg from "./logo.svg?raw";
 
+import "./App.css";
+
 function App() {
-  const [theme, setTheme] = useState<"light" | "dark">("light");
+  const [theme] = useFigmaPluginTheme();
   const inputRef = useRef<HTMLInputElement>(null);
   const [success, setSuccess] = useState<boolean | undefined>(undefined);
-
-  useEffect(() => {
-    // Support Figma dark theme - https://www.figma.com/plugin-docs/css-variables/
-    if (document.querySelector("html")?.classList.contains("figma-dark")) {
-      setTheme("dark");
-    }
-  }, []);
 
   useEffect(() => {
     window.onmessage = async (event: {
@@ -68,12 +64,7 @@ function App() {
 
   return (
     <ToolkitProvider theme={theme}>
-      <FlexLayout
-        className="appRoot"
-        align="center"
-        direction="column"
-        justify="center"
-      >
+      <StackLayout className="appRoot" align="center">
         <header>
           <img src={logoPng} />
           &nbsp;
@@ -96,7 +87,7 @@ function App() {
           </Button>
           <Button onClick={onCancel}>Cancel</Button>
         </FlexLayout>
-      </FlexLayout>
+      </StackLayout>
     </ToolkitProvider>
   );
 }

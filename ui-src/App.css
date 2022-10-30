@@ -1,6 +1,24 @@
+body {
+  margin: 0;
+}
+
 #root,
 .appRoot {
   height: 100%;
+}
+
+.appRoot.appRoot {
+  background: var(--uitk-container-background-high);
+  /* Vertical align */
+  justify-content: center;
+}
+
+.uitk-light {
+  color-scheme: light;
+}
+
+.uitk-dark {
+  color-scheme: dark;
 }
 
 .uitk-dark .appRoot {

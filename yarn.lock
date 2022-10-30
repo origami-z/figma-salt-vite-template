@@ -309,6 +309,13 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
+"@babel/runtime@^7.6.2":
+  version "7.20.0"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.20.0.tgz#824a9ef325ffde6f78056059db3168c08785e24a"
+  integrity sha512-NDYdls71fTXoU8TZHfbBWg7DiZfNzClcKui/+kyi6ppD2L1qnWW3VV6CjtaBXSUGGhiTWJ6ereOIkUvenif66Q==
+  dependencies:
+    regenerator-runtime "^0.13.10"
+
 "@babel/template@^7.18.10", "@babel/template@^7.18.6", "@babel/template@^7.3.3":
   version "7.18.10"
   resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.18.10.tgz#6f9134835970d1dbf0835c0d100c9f38de0c5e71"
@@ -386,6 +393,13 @@
   version "0.2.4"
   resolved "https://registry.yarnpkg.com/@icons/material/-/material-0.2.4.tgz#e90c9f71768b3736e76d7dd6783fc6c2afa88bc8"
   integrity sha512-QPcGmICAPbGLGb6F/yNf/KzKqvFx8z5qx3D1yFqVAjoFmXK35EgyW+cJ57Te3CNsmzblwtzakLGFqHPqrfb4Tw==
+
+"@internationalized/date@^3.0.0":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@internationalized/date/-/date-3.0.1.tgz#66332e9ca8f59b7be010ca65d946bca430ba4b66"
+  integrity sha512-E/3lASs4mAeJ2Z2ye6ab7eUD0bPUfTeNVTAv6IS+ne9UtMu9Uepb9A1U2Ae0hDr6WAlBuvUtrakaxEdYB9TV6Q==
+  dependencies:
+    "@babel/runtime" "^7.6.2"
 
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.1.0"
@@ -596,49 +610,63 @@
     "@types/yargs" "^17.0.8"
     chalk "^4.0.0"
 
-"@jpmorganchase/uitk-core@0.3.0", "@jpmorganchase/uitk-core@latest":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@jpmorganchase/uitk-core/-/uitk-core-0.3.0.tgz#fb4bcbde44e673eeeaa999817e128a4a25943632"
-  integrity sha512-AvIKBSkYX6s0Gf2OQn93146P/o8XHVlVlBUssOQyzXixXQ9AaWzkvydPfIxVfaw+D453GfrdC10tQXjMjK7T3Q==
+"@jpmorganchase/uitk-core@0.7.0":
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/@jpmorganchase/uitk-core/-/uitk-core-0.7.0.tgz#dd71c80d184b62431a95b2545becaa0e21a7b82e"
+  integrity sha512-5zZuwknS84aMrvi/PN1zc+nIUC57IjXVablTeOiPuNtucg8d2awgZf7yaPz0LwvfysIYz5b6lqlVx+Tb6YsjZg==
   dependencies:
     "@floating-ui/react-dom-interactions" "^0.5.0"
-    "@jpmorganchase/uitk-icons" "0.2.0"
+    "@jpmorganchase/uitk-icons" "0.4.1"
+    aria-hidden "^1.1.1"
     classnames "^2.2.6"
+    no-scroll "^2.1.1"
     warning "^4.0.3"
 
-"@jpmorganchase/uitk-icons@0.2.0", "@jpmorganchase/uitk-icons@latest":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@jpmorganchase/uitk-icons/-/uitk-icons-0.2.0.tgz#37a6ebcbf76fd8e1024c0707f93bdbccfc3a88c5"
-  integrity sha512-0wkdibJPrAfjRwlx8PWFZbZxaNqGEUUUZdPCArNQBhfm9NjeC4OpAkmhF9ENckIBzt2fQNWs3n6muAhcMIUytw==
+"@jpmorganchase/uitk-icons@0.4.1":
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/@jpmorganchase/uitk-icons/-/uitk-icons-0.4.1.tgz#e1f42f737e6da64f236cb530d6d3ae515d1cbf30"
+  integrity sha512-eqgl/UDFKwSM/3JYequV0FjxqLO3ra5ahfxEL4g/Doju8IFRj0/D5dUhsE7UG5TiMp6qg3CLvQrH82OO6tpOQA==
   dependencies:
     classnames "^2.2.6"
 
-"@jpmorganchase/uitk-lab@latest":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@jpmorganchase/uitk-lab/-/uitk-lab-0.3.0.tgz#afcf09d6f7b1666557128cccd808fce552ea73c6"
-  integrity sha512-Zrv5f8VxuaTNEJO8AlEerz8GPIlwYEgTmA4aZY4CcEdKu880i8SCGOsaR3z4JiZAbVGYebwgCUKw2+M4Xmi3kw==
+"@jpmorganchase/uitk-icons@0.5.0":
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/@jpmorganchase/uitk-icons/-/uitk-icons-0.5.0.tgz#a11e028b24d920c01ab057c5e4a1e457768b0fe9"
+  integrity sha512-pEvtcRhSJjZyXHHncZuVlNn8Ik/D0bPRq0MvGtkJXxvQ0Zhx6PsBHhJdyxqeKNIEwv69Q8LpOiIR7voxaanyLw==
+  dependencies:
+    classnames "^2.2.6"
+
+"@jpmorganchase/uitk-icons@0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@jpmorganchase/uitk-icons/-/uitk-icons-0.6.0.tgz#4d6920f8ecbe1588eb68367954f933e0f2317996"
+  integrity sha512-geyzN7wHmgCVT7FWHdeid5duLPW8s9ZO9Vt+cDi1LAqF8LiXf6NWHirba9jnOjBKLVObUPnARtDTSGTgtG7Jkg==
+  dependencies:
+    classnames "^2.2.6"
+
+"@jpmorganchase/uitk-lab@0.7.1":
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/@jpmorganchase/uitk-lab/-/uitk-lab-0.7.1.tgz#6e69ecce84a2b1862e5dd0267cf74264d3d082c7"
+  integrity sha512-UbKDQvx4fkrZEC3yCCKObR5PJxNOIHwCFPXRjvOHgaeuB4l1lwyrPN6ol9QPgx/LhR8t9Fv4MW6s3Uaj1QF79w==
   dependencies:
     "@floating-ui/react-dom-interactions" "^0.5.0"
-    "@jpmorganchase/uitk-core" "0.3.0"
-    "@jpmorganchase/uitk-icons" "0.2.0"
-    aria-hidden "^1.1.1"
+    "@internationalized/date" "^3.0.0"
+    "@jpmorganchase/uitk-core" "0.7.0"
+    "@jpmorganchase/uitk-icons" "0.5.0"
     attr-accept "^2.0.0"
     classnames "^2.2.6"
     clipboard-copy "^4.0.1"
     compute-scroll-into-view "^1.0.16"
-    dayjs "1.10.6"
     deepmerge "^4.2.2"
-    no-scroll "^2.1.1"
     react-color "^2.19.3"
     react-window "^1.8.6"
     rifm "^0.12.0"
     tinycolor2 "^1.4.2"
     warning "^4.0.3"
 
-"@jpmorganchase/uitk-theme@latest":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@jpmorganchase/uitk-theme/-/uitk-theme-0.3.0.tgz#2c5ca1ee271a5496c9c9ec4c492f05159958a657"
-  integrity sha512-eLmMF91tsZgF5lR5wk8Wr5eYpnclG0DgniiT4IcuAVcENoOgeYkaBF64PgDpBOg6AD5v/9Wgx+tnjGH8QOkM/g==
+"@jpmorganchase/uitk-theme@0.5.0":
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/@jpmorganchase/uitk-theme/-/uitk-theme-0.5.0.tgz#117e4a02449fbdf83c2ef73db11d8b9594fe5c02"
+  integrity sha512-igBDycZw7vDpB7U7ShbeWpIaILr/YIMi8/XlgY/jTceW43n3pMdPRXDpc1waM9BtflHBfuQRla8XEQOxNiCriw==
 
 "@jridgewell/gen-mapping@^0.1.0":
   version "0.1.1"
@@ -1257,11 +1285,6 @@ date-fns@^2.16.1:
   version "2.28.0"
   resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.28.0.tgz#9570d656f5fc13143e50c975a3b6bbeb46cd08b2"
   integrity sha512-8d35hViGYx/QH0icHYCeLmsLmMUheMmTyV9Fcm6gvNwdw31yXXH+O85sOBJ+OLnLQMKZowvpKb6FgMIQjcpvQw==
-
-dayjs@1.10.6:
-  version "1.10.6"
-  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.10.6.tgz#288b2aa82f2d8418a6c9d4df5898c0737ad02a63"
-  integrity sha512-AztC/IOW4L1Q41A86phW5Thhcrco3xuAA+YX/BLpLWWjRcTj5TOt/QImBLmCKlrF7u7k47arTnOyL6GnbG8Hvw==
 
 debug@^4.1.0, debug@^4.1.1:
   version "4.3.4"
@@ -2637,6 +2660,11 @@ reactcss@^1.2.0:
   integrity sha512-KiwVUcFu1RErkI97ywr8nvx8dNOpT03rbnma0SSalTYjkrPYaEajR4a/MRt6DZ46K6arDRbWMNHF+xH7G7n/8A==
   dependencies:
     lodash "^4.0.1"
+
+regenerator-runtime@^0.13.10:
+  version "0.13.10"
+  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.13.10.tgz#ed07b19616bcbec5da6274ebc75ae95634bfc2ee"
+  integrity sha512-KepLsg4dU12hryUO7bp/axHAKvwGOCV0sGloQtpagJ12ai+ojVDqkeGSiRX1zlq+kjIMZ1t7gpze+26QqtdGqw==
 
 regenerator-runtime@^0.13.4:
   version "0.13.9"
