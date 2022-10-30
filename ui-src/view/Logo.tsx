@@ -12,7 +12,7 @@ const Logo: FC<{ className?: string }> = ({ className }) => (
     <path
       d="M27 5V27H5M31 9V31H9M1 1H23V23H1V1Z"
       stroke="currentcolor"
-      stroke-width="2"
+      strokeWidth="2"
     />
   </svg>
 );
