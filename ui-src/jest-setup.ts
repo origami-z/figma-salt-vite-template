@@ -11,4 +11,4 @@ class ResizeObserver {
     // do nothing
   }
 }
-global.ResizeObserver = ResizeObserver
+global.ResizeObserver = ResizeObserver;
