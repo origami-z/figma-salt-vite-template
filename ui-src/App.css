@@ -1,39 +1,41 @@
-body {
-  margin: 0;
-}
-
 #root,
 .appRoot {
   height: 100%;
 }
 
-.appRoot.appRoot {
-  background: var(--uitk-container-background-high);
-  /* Vertical align */
-  justify-content: center;
+body {
+  background: var(--figma-color-bg);
+  font-family: "Open Sans";
+  margin: 0;
+  overflow: hidden;
 }
 
-.uitk-light {
+.figma-light {
   color-scheme: light;
 }
 
-.uitk-dark {
+.figma-dark {
   color-scheme: dark;
+}
+
+.uitk-density-touch.uitk-density-touch,
+.uitk-density-low.uitk-density-low,
+.uitk-density-medium.uitk-density-medium,
+.uitk-density-high.uitk-density-high {
+  /* This shouldn't be defined 4 times */
+  --uitk-typography-fontFamily: "Open Sans";
+}
+
+.appRoot.appRoot {
+  background: var(--uitk-container-background-medium);
+  /* Vertical align */
+  justify-content: center;
 }
 
 .uitk-dark .appRoot {
   color: var(--uitk-text-primary-foreground);
 }
 
-header {
-  text-align: center;
-}
-
-svg {
-  stroke: var(--color-icon, rgba(0, 0, 0, 0.9));
-}
-
-img {
-  height: auto;
-  width: 2rem;
+.language-formField {
+  --uitkFormField-width: 160px;
 }
