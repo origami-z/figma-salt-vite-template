@@ -3,8 +3,6 @@ import { FormField, Input } from "@salt-ds/lab";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { PostToFigmaMessage, PostToUIMessage } from "../../shared-src";
 import Logo from "./Logo";
-import logoPng from "./logo.png";
-import logoSvg from "./logo.svg?raw";
 
 export const MainView = () => {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -63,14 +61,10 @@ export const MainView = () => {
   return (
     <StackLayout className="appRoot" align="center">
       <header>
-        <img src={logoPng} />
-        &nbsp;
-        <img src={`data:image/svg+xml;utf8,${logoSvg}`} />
-        &nbsp;
         <Logo />
         <h2>Rectangle Creator</h2>
       </header>
-      <FormField label="Rectangle Count" fullWidth={false}>
+      <FormField label="Rectangle Count" fullWidth={false} variant="secondary">
         <Input
           id="input"
           type="number"
