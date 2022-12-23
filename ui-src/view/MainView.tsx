@@ -1,10 +1,5 @@
-import {
-  Button,
-  FlexLayout,
-  FormField,
-  Input,
-  StackLayout,
-} from "@jpmorganchase/uitk-core";
+import { Button, FlexLayout, StackLayout } from "@salt-ds/core";
+import { FormField, Input } from "@salt-ds/lab";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { PostToFigmaMessage, PostToUIMessage } from "../../shared-src";
 import Logo from "./Logo";

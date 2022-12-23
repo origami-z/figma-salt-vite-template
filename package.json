@@ -1,7 +1,7 @@
 {
-  "name": "figma-react-vite-template",
+  "name": "figma-salt-vite-template",
   "version": "1.0.0",
-  "description": "Figma react typescript template",
+  "description": "Figma Salt Vite template",
   "scripts": {
     "test": "jest",
     "prettier": "prettier --write . --ignore-path .gitignore",
@@ -20,10 +20,10 @@
   "author": "author",
   "license": "MIT",
   "dependencies": {
-    "@jpmorganchase/uitk-core": "latest",
-    "@jpmorganchase/uitk-icons": "latest",
-    "@jpmorganchase/uitk-lab": "latest",
-    "@jpmorganchase/uitk-theme": "latest",
+    "@salt-ds/core": "latest",
+    "@salt-ds/icons": "latest",
+    "@salt-ds/lab": "latest",
+    "@salt-ds/theme": "latest",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

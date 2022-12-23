@@ -1,6 +1,6 @@
 {
-  "name": "UITK Template",
-  "id": "uitk-template-id-to-be-replaced",
+  "name": "Figma Salt Vite Template",
+  "id": "figma-salt-template-id-to-be-replaced",
   "api": "1.0.0",
   "editorType": ["figma", "figjam"],
   "permissions": [],
