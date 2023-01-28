@@ -18,7 +18,7 @@ figma.ui.onmessage = (msg: PostToFigmaMessage) => {
     figma.ui.postMessage({
       type: "created-nodes-result",
       success: msg.count > 0,
-    } as PostToUIMessage);
+    } satisfies PostToUIMessage);
 
     figma.currentPage.selection = nodes;
     figma.viewport.scrollAndZoomIntoView(nodes);

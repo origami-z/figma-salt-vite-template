@@ -1,32 +1,26 @@
 import { Button, FlexLayout, StackLayout } from "@salt-ds/core";
 import { FormField, Input } from "@salt-ds/lab";
 import React, { useCallback, useEffect, useRef, useState } from "react";
-import { PostToFigmaMessage, PostToUIMessage } from "../../shared-src";
+import { PostToFigmaMessage } from "../../shared-src";
+import { FigmaToUIMessageEvent } from "../types";
 import Logo from "./Logo";
 
 export const MainView = () => {
   const inputRef = useRef<HTMLInputElement>(null);
   const [success, setSuccess] = useState<boolean | undefined>(undefined);
 
-  const handleWindowMessage = useCallback(
-    (event: {
-      data: {
-        pluginMessage: PostToUIMessage;
-      };
-    }) => {
-      if (event.data.pluginMessage) {
-        const { pluginMessage } = event.data;
-        switch (pluginMessage.type) {
-          case "created-nodes-result": {
-            setSuccess(pluginMessage.success);
-            break;
-          }
-          default:
+  const handleWindowMessage = useCallback((event: FigmaToUIMessageEvent) => {
+    if (event.data.pluginMessage) {
+      const { pluginMessage } = event.data;
+      switch (pluginMessage.type) {
+        case "created-nodes-result": {
+          setSuccess(pluginMessage.success);
+          break;
         }
+        default:
       }
-    },
-    []
-  );
+    }
+  }, []);
 
   useEffect(() => {
     window.addEventListener("message", handleWindowMessage);
@@ -42,7 +36,7 @@ export const MainView = () => {
         pluginMessage: {
           type: "create-rectangles",
           count,
-        } as PostToFigmaMessage,
+        } satisfies PostToFigmaMessage,
       },
       "*"
     );
@@ -50,7 +44,7 @@ export const MainView = () => {
 
   const onCancel = () => {
     parent.postMessage(
-      { pluginMessage: { type: "cancel" } as PostToFigmaMessage },
+      { pluginMessage: { type: "cancel" } satisfies PostToFigmaMessage },
       "*"
     );
   };
